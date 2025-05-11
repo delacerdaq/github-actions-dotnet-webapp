@@ -1,0 +1,23 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main  
+  schedule:
+    - cron: '0 * * * *'  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  
+
+    steps:
+    - name: Checando o código
+      uses: actions/checkout@v3 
+
+    - name: Rodando script personalizado
+      run: |
+        echo "Iniciando o script personalizado..."
+        # Aqui você pode colocar seu script personalizado
+        # Exemplo de comando bash
+        echo "Essa é uma execução personalizada!"
